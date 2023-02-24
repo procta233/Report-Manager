@@ -3,7 +3,7 @@ import React from 'react'
 const MapModule = () => {
   return (
     <div>
-      map module
+      map modules
     </div>
   )
 }
