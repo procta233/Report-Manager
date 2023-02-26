@@ -3,7 +3,7 @@ import React from 'react'
 const ClientTable = () => {
   return (
     <div>
-      this is client table
+      this is client Table
     </div>
   )
 }
