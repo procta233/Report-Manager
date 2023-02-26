@@ -1,29 +1,32 @@
-import React from 'react'
-import { Link,Outlet } from 'react-router-dom'
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import '../components/CSS/Admin.css';
+
 const Admin = () => {
   return (
-    <div>
-      <h1>admin dashboard</h1>
+    <div className="admin-container">
+      <h1 className="admin-header">Admin Dashboard</h1>
 
-        
-           <div className="App">
-            <nav>
-            <ul className="App-header">
-              <li>
-                <Link to="/admin/usercreation">Create New User</Link>
-              </li>
-              <li>
-                <Link to="/admin/reporttypeselect">Define Mapping</Link>
-              </li> 
-              
-            </ul>
-            </nav>
-            <Outlet/>
-          </div>
-       
+      <div className="admin-nav">
+        <ul className="admin-nav-list">
+          <li className="admin-nav-list-item">
+            <Link to="/admin/usercreation" className="admin-nav-link">
+              <i className="admin-nav-link-icon fas fa-user-plus"></i>
+              Create New User
+            </Link>
+          </li>
+          <li className="admin-nav-list-item">
+            <Link to="/admin/reporttypeselect" className="admin-nav-link">
+              <i className="admin-nav-link-icon fas fa-file-alt"></i>
+              Define Mapping
+            </Link>
+          </li>
+        </ul>
+      </div>
 
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default Admin
+export default Admin;

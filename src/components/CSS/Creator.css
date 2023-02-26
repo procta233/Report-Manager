@@ -1,0 +1,53 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.creator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .creator-header {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .creator-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .creator-nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .creator-nav-list-item {
+    margin-right: 2rem;
+  }
+  
+  .creator-nav-link {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .creator-nav-link:hover {
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .creator-nav-link-icon {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }

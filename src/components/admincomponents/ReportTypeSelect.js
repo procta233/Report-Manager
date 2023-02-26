@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./ReportTypeSelect.css";
+import "../CSS/ReportTypeSelect.css";
+import { FaPlus } from 'react-icons/fa';
 
 const ReportTypeSelect = () => {
   const [data, setData] = useState([]);
@@ -11,12 +12,12 @@ const ReportTypeSelect = () => {
   const [atlist, setAtlist] = useState([]);
   const [select, setSelect] = useState(false);
   const [select2, setSelect2] = useState(true);
-  const [select3,setSelect3] = useState(false);
+  const [select3, setSelect3] = useState(false);
   const [addReportType, setAddReportType] = useState("");
-  const [newData,setNewData]=useState([]);
+  const [newData, setNewData] = useState([]);
   const API = "https://create-users.onrender.com/api/sensorlist";
   const API2 = "https://create-users.onrender.com/api/pwd_auto/columns";
-  const API3 ="https://create-users.onrender.com/api/addsensorlist";
+  const API3 = "https://create-users.onrender.com/api/addsensorlist";
 
   useEffect(() => {
     fetchData(API).then((data) => setData(data));
@@ -48,37 +49,35 @@ const ReportTypeSelect = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
- 
-    setNewData ([
+
+    setNewData([
       ...newData,
       {
-        
         head1: newHead1,
         head2: newHead2,
         unit: newUnit,
         attributetype: newAttributetype,
         reporttype: selectedFormType,
-      }
+      },
     ]);
-    const newData2 =[
+    const newData2 = [
       ...data,
       {
-        sensorname: '1',
+        sensorname: "1",
         head1: newHead1,
         head2: newHead2,
         unit: newUnit,
         attributetype: newAttributetype,
         reporttype: selectedFormType,
-      }
+      },
     ];
     setData(newData2);
     setNewHead1("");
     setNewHead2("");
     setNewUnit("");
-    setNewAttributetype('');
-  
+    setNewAttributetype("");
   };
-  const handleSubmit2=async (e)=>{
+  const handleSubmit2 = async (e) => {
     e.preventDefault();
     console.log(newData);
     try {
@@ -99,9 +98,9 @@ const ReportTypeSelect = () => {
     } catch (error) {
       console.error("There was an error registering the user:", error);
       // replace with your logic to handle registration errors
-    };
-   
-    window.location.reload(false);
+    }
+    console.log(newData);
+    // window.location.reload(false);
   };
   const call = (e) => {
     setSelectedFormType(e);
@@ -109,22 +108,21 @@ const ReportTypeSelect = () => {
     setSelect2(false);
     setSelect3(false);
   };
-  const call2 =()=>{
+  const call2 = () => {
     setSelectedFormType(addReportType);
     setSelect(true);
     setSelect2(false);
     setSelect3(false);
-
   };
-  const addReport =(e)=>{
+  const addReport = (e) => {
     console.log(e);
     setAddReportType(e);
-  }
+  };
   return (
     <div>
       {select2 && (
         <div>
-          <table className="table1">
+          <table>
             <thead>
               <tr>
                 <th>S.no.</th>
@@ -138,25 +136,28 @@ const ReportTypeSelect = () => {
                   <td>{cur}</td>
                 </tr>
               ))}
-               <tr><button onClick={()=>{setSelect3(true)}}>Add New ReportType</button></tr>
-               {select3&&(
-                <div>  
-                <input
-                type="text"
-                
-                onChange={(e) => addReport(e.target.value)}
-                required
-              />
-              <button onClick={()=>call2()}>Submit</button>
-              </div>
-               )
-
-               }
+              <tr>
+                <button
+                  className="add-button"
+                  onClick={() => {
+                    setSelect3(true);
+                  }}
+                >
+                  <FaPlus /> ReportType
+                </button>
+              </tr>
+              {select3 && (
+                <div>
+                  <input
+                    type="text"
+                    onChange={(e) => addReport(e.target.value)}
+                    required
+                  />
+                  <button onClick={() => call2()}>Submit</button>
+                </div>
+              )}
             </tbody>
-            
           </table>
-         
-         
         </div>
       )}
       {select && (

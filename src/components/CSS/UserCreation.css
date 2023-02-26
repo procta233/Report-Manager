@@ -1,0 +1,494 @@
+@import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+body {
+  background-color: #f1f1f1;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #444;
+  text-align: center;
+}
+
+form {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  max-width: 500px;
+  padding: 0px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(195, 55, 55, 0.2);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  color: #444;
+  background-color: #f1f1f1;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 24px;
+  color: #444;
+  margin-right: 10px;
+}
+
+.user-id-icon {
+  content: "\e7fd";
+  font-family: "Material Icons";
+}
+
+.user-name-icon {
+  content: "\e7fd";
+  font-family: "Material Icons";
+}
+
+.employee-id-icon {
+  content: "\e7fd";
+  font-family: "Material Icons";
+}
+
+.department-icon {
+  content: "\e2c8";
+  font-family: "Material Icons";
+}
+
+.user-type-icon {
+  content: "\e853";
+  font-family: "Material Icons";
+}
+
+.phone-number-icon {
+  content: "\e0cd";
+  font-family: "Material Icons";
+}
+
+.email-icon {
+  content: "\e0be";
+  font-family: "Material Icons";
+}
+
+label[for="user_id"]::before {
+  content: attr(data-icon);
+  font-family: "Material Icons";
+  margin-right: 5px;
+}
+
+label[for="user_name"]::before {
+  content: attr(data-icon);
+  font-family: "Material Icons";
+  margin-right: 5px;
+}
+
+label[for="employ_id"]::before {
+  content: attr(data-icon);
+  font-family: "Material Icons";
+  margin-right: 5px;
+}
+
+label[for="department"]::before {
+  content: attr(data-icon);
+  font-family: "Material Icons";
+  margin-right: 5px;
+}
+
+label[for="designation"]::before {
+  content: attr(data-icon);
+  font-family: "Material Icons";
+  margin-right: 5px;
+}
+
+label[for="phone_number"]::before {
+  content: attr(data-icon);
+  font-family: "Material Icons";
+  margin-right: 5px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+h1::before {
+  content: "\f007";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+.fa {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.my-class:before {
+  content: "\f007";
+}
+
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #007bff;
+}
+
+label[for="user_id"]::before {
+  content: "\f2c2";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+
+label[for="user_name"]::before {
+  content: "\f4ff";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+
+label[for="employ_id"]::before {
+  content: "\f2c2";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+
+label[for="department"]::before {
+  content: "\f03a";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+
+label[for="phone_number"]::before {
+  content: "\f095";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+
+label[for="email"]::before {
+  content: "\f0e0";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+button[type="submit"]::before {
+  content: "\f234";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: #333;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+/* input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  outline: none;
+  border-bottom: 1px solid #007bff;
+} */
+
+select {
+  background-color: #34cd26;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #333;
+}
+
+button[type="submit"] {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #279f37;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.success {
+  color: #28a745;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e1e1e;
+}
+
+form input,
+form select {
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #f5f5f5;
+  color: #1e1e1e;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+form button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background-color: #0069d9;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-container svg {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
+  fill: #007bff;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    padding: 1.5rem;
+  }
+
+  form h1 {
+    font-size: 1.5rem;
+  }
+
+  form button {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .icon-container svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.popup {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.popup-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #007bff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: #333;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  outline: none;
+  border-bottom: 1px solid #007bff;
+}
+
+select {
+  background-color: #fff;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #333;
+}
+
+button[type="submit"] {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.success {
+  color: #28a745;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}

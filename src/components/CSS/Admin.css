@@ -1,0 +1,53 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .admin-header {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .admin-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .admin-nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-nav-list-item {
+    margin-right: 2rem;
+  }
+  
+  .admin-nav-link {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .admin-nav-link:hover {
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .admin-nav-link-icon {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }

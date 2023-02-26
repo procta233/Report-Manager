@@ -110,6 +110,10 @@ function CreateReport() {
   }, []);
 
   return (
+    <div >
+    <label>
+        <h1>Create New Report</h1>
+      </label>
     <form onSubmit={handleSubmit}>
 
 
@@ -230,6 +234,7 @@ function CreateReport() {
 
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 }
 export default CreateReport;

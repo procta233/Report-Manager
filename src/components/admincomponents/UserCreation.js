@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./UserCreation.css";
+import "../CSS/UserCreation.css"
 
 const UserCreation = () => {
   const [values, setValues] = useState({
