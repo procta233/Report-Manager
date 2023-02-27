@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 import '../components/CSS/Creator.css';
+import ViewBoard from '../components/othercomponents/ViewBoard';
 
 const Creator = () => {
   return (
@@ -19,6 +20,7 @@ const Creator = () => {
           </ul>
         </div>
         <Outlet />
+        <ViewBoard/>
       </div>
   
   );

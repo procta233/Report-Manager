@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import '../components/CSS/Admin.css';
+import ViewBoard from '../components/othercomponents/ViewBoard';
 
 const Admin = () => {
   return (
@@ -22,9 +23,12 @@ const Admin = () => {
             </Link>
           </li>
         </ul>
+
       </div>
 
       <Outlet />
+      
+      <ViewBoard/>
     </div>
   );
 };
