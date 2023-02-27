@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../CSS/CreateReport.css"
 
 function CreateReport() {
   const [values, setValues] = useState({
@@ -110,15 +111,17 @@ function CreateReport() {
   }, []);
 
   return (
-    <div >
+    <div className="usercreation-div">
     <label>
-        <h1>Create New Report</h1>
+        <h1 className="usercreation-h1">Create New Report</h1>
       </label>
-    <form onSubmit={handleSubmit}>
+      
+    <form className="usercreation-form" onSubmit={handleSubmit}>
 
-
-      <label htmlFor="clientid">Client ID</label>
+      <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="clientid">Client ID</label>
       <select
+      className="usercreation-select"
         type="text"
         id="clientid"
         name="clientid"
@@ -132,9 +135,11 @@ function CreateReport() {
           <option key={index}>{cur}</option>
         ))}
       </select>
-
-      <label htmlFor="reporttype">Report Type</label>
+      </div>
+      <div className="usercreation-div2">
+      <label  className="usercreation-label-2" htmlFor="reporttype">Report Type</label>
       <select
+      className="usercreation-select"
         type="text"
         id="reporttype"
         name="reporttype"
@@ -148,9 +153,11 @@ function CreateReport() {
           <option key={index}>{cur}</option>
         ))}
       </select>
-
-      <label htmlFor="system">System</label>
+      </div>
+       <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="system">System</label>
       <select
+        className="usercreation-select"
         type="text"
         id="system"
         name="system"
@@ -164,9 +171,11 @@ function CreateReport() {
           <option key={index}>{cur}</option>
         ))}
       </select>
-
-      <label htmlFor="manufacturer">Manufacturer</label>
+      </div>   
+        <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="manufacturer">Manufacturer</label>
       <select
+        className="usercreation-select"
         type="text"
         id="manufacturer"
         name="manufacturer"
@@ -180,45 +189,55 @@ function CreateReport() {
           <option key={index}>{cur}</option>
         ))}
       </select>
-
-      <label htmlFor="datebegin">Date Begin</label>
+      </div>
+       <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="datebegin">Date Begin</label>
       <input
+      className="usercreation-input"
         type="date"
         id="datebegin"
         name="datebegin"
         value={values.datebegin}
         onChange={handleChange}
       />
-
-      <label htmlFor="timebegin">Time Begin</label>
+      </div>
+          <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="timebegin">Time Begin</label>
       <input
+      className="usercreation-input"
         type="time"
         id="timebegin"
         name="timebegin"
         value={values.timebegin}
         onChange={handleChange}
       />
-
-      <label htmlFor="dateend">Date End</label>
+      </div>
+      <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="dateend">Date End</label>
       <input
+        className="usercreation-input"
         type="date"
         id="dateend"
         name="dateend"
         value={values.dateend}
         onChange={handleChange}
       />
-
-      <label htmlFor="timeend">Time End</label>
+      </div>
+      <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="timeend">Time End</label>
       <input
+        className="usercreation-input"
         type="time"
         id="timeend"
         name="timeend"
         value={values.timeend}
         onChange={handleChange}
       />
-
-      <label htmlFor="timetype">Time Type</label>
+      </div>
+      <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="timetype">Time Type</label>
       <select
+      className="usercreation-select"
         type="text"
         id="timetype"
         name="timetype"
@@ -231,8 +250,9 @@ function CreateReport() {
         <option value="1">Date And Time Separate</option>
         <option value="2">Date And Time Joined</option>
       </select>
+      </div>
 
-      <button type="submit">Submit</button>
+      <button className="usercreation-button" type="submit">Submit</button>
     </form>
     </div>
   );

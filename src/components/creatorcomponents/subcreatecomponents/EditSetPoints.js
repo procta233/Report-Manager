@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../../CSS/EditSetPoints.css";
 
 function Table() {
   const columns = [
@@ -36,15 +37,15 @@ function Table() {
   };
 
   return (
-    <table>
-      <thead>
-        <tr>
+    <table classname='editsetpoints'>
+      <thead classname="editsetpoints-thead">
+        <tr classname="editsetpoints-tr">
           {tableColumns.map((column, index) => (
-            <th key={column.key}>
-              <div>
+            <th key={column.key} classname="editsetpoints-th">
+              <div classname="editsetpoints-div">
                
-                {index > 0 && <button onClick={() => handleMoveLeft(index)}>{"<"}</button>}
-                <span>{column.title}</span>
+                {index > 0 && <button classname="editsetpoints-button" onClick={() => handleMoveLeft(index)}>{"<"}</button>}
+                <span classname="editsetpoints-span">{column.title}</span>
                 {index < tableColumns.length - 1 && <button onClick={() => handleMoveRight(index)}>{">"}</button>}
               </div>
             </th>

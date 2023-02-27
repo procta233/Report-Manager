@@ -1,9 +1,12 @@
- .report-type-select {
+ .reporttypeselect-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px auto;
   max-width: 800px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Form type select */
@@ -11,7 +14,16 @@
   margin-bottom: 20px;
 }
 
-select {
+.reporttypeselect-table {
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  padding-left: 20%;
+}
+
+
+/* select {
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -23,40 +35,48 @@ select {
   margin-right: 20px;
 } */
 
-select option {
+/* select option {
   font-size: 16px;
   color: #333;
-}
+}  */
 
 /* Style for the table element */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 800px;
-  padding-left: 20%;
-}
+
 
 /* Style for the table headers */
-thead th {
+
+.reporttypeselect-th1column {
+  color: white;
   font-weight: bold;
   background-color: #333;
   text-align: left;
   padding: 10px;
-  color: #fff;
+
 }
 
-/* Style for the table cells */
-tbody td {
+.reporttypeselect-tbody-td{
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
 
-tfoot td {
+
+.reporttypeselect-tr1column {
+  border: 1px solid black;
+}
+
+.reporttypeselect-th {
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  padding: 12px;
+  text-align: center;
+}
+
+.reporttypeselect-tfoot-td{
   padding: 10px;
   border-top: 1px solid #ccc;
 }
 
-tfoot th {
+.reporttypeselect-th3column{
   font-weight: bold;
   padding: 10px;
   text-align: left;
@@ -64,23 +84,12 @@ tfoot th {
   color: #fff;
 }
 
-/* Style for the form element */
-form {
-  display: flex;
-  flex-direction: column;
-}
 
-/* Style for the form labels */
-label {
-  margin-bottom: 8px;
-}
-
-/* Style for the form inputs */
-input[type="text"] {
+.selectreporttype-input-tfoot {
   font-size: 16px;
   padding: 8px;
   border-radius: 4px;
-  border: none;
+  border: 1px solid black; 
   background-color: #f7f7f7;
   color: #333;
   width: 100%;
@@ -89,22 +98,84 @@ input[type="text"] {
   margin-bottom: 10px;
 }
 
-tfoot select option {
+.selectreporttype-select-tfoot {
   font-size: 16px;
   color: #333;
 }
 /* Style for the form button */
-button[type="submit"] {
+.selectreporttype-submit{
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
-  background-color: #333;
+  background-color: #0ec017;
   color: #fff;
   cursor: pointer;
   margin-top: 20px;
 }
 
-button:hover {
+.selectreporttype-submit:hover {
   background-color: #555;
+}
+
+
+
+.reporttypeselect-tr {
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.reporttypeselect-tr:hover {
+  background-color: #f2f2f2;
+}
+
+.reportselecttype-add-button {
+  background-color: #0db120;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0px;
+  padding: 10px 15px;
+  width: 100%;
+}
+.reportselecttype-add-button:hover{
+  background-color: #010101;
+}
+
+.reportselecttype-submit-button {
+  background-color:#0db120;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px 15px;
+}
+
+.reporttypeselect-div{
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+.reporttypeselect-div input[type="text"]:focus {
+  outline: none;
+}
+
+.reporttypeselect-tbody .reporttypeselect-trbuttoncolumn button {
+  display: block;
+  margin: 10px auto;
+}
+
+.reporttypeselect-tbody .reporttypeselect-trbuttoncolumn button:hover {
+  background-color: #5549da;
+}
+
+.reporttypeselect-tbody .reporttypeselect-trbuttoncolumn button:active {
+  background-color: #2a28b1;
 }

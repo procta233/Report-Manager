@@ -119,26 +119,26 @@ const ReportTypeSelect = () => {
     setAddReportType(e);
   };
   return (
-    <div>
+    <div className="reporttypeselect-div">
       {select2 && (
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>S.no.</th>
-                <th>Form Type</th>
+        <div className="reporttypeselect-div">
+          <table className="reporttypeselect-table">
+            <thead className="reporttypeselect-thead">
+              <tr className="reporttypeselect-tr1column">
+                <th className="reporttypeselect-th1column">S.no.</th>
+                <th className="reporttypeselect-th1column">Form Type</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="reporttypeselect-tbody">
               {getUniqueFormTypes.map((cur, index) => (
-                <tr key={index} value={cur} onClick={() => call(cur)}>
-                  <td>{index + 1}</td>
-                  <td>{cur}</td>
+                <tr className="reporttypeselect-tr2-tbody"key={index} value={cur} onClick={() => call(cur)}>
+                  <td className="reporttypeselect-tbody-td">{index + 1}</td>
+                  <td className="reporttypeselect-tbody-td">{cur}</td>
                 </tr>
               ))}
-              <tr>
+              <tr className="reporttypeselect-trbuttoncolumn">
                 <button
-                  className="add-button"
+                  className="reportselecttype-add-button"
                   onClick={() => {
                     setSelect3(true);
                   }}
@@ -147,13 +147,13 @@ const ReportTypeSelect = () => {
                 </button>
               </tr>
               {select3 && (
-                <div>
-                  <input
+                <div className="reporttypeselect-div">
+                  <input  className=" selectreporttype-input-tfoot"
                     type="text"
                     onChange={(e) => addReport(e.target.value)}
                     required
                   />
-                  <button onClick={() => call2()}>Submit</button>
+                  <button className= "reportselecttype-submit-button "onClick={() => call2()}>Submit</button>
                 </div>
               )}
             </tbody>
@@ -161,20 +161,21 @@ const ReportTypeSelect = () => {
         </div>
       )}
       {select && (
-        <div className="popup">
-          <div>
-            <h2>{selectedFormType} Report</h2>
+        <div className="reporttypeselect-div">  
+   {/* popup */}
+          <div className="reporttypeselect-div">
+            <h2 className="selectreporttype-h2">{selectedFormType} Report</h2>
           </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Head1</th>
-                <th>Head2</th>
-                <th>Unit</th>
-                <th>Attribute</th>
+          <table className="reportselecttype-table">
+            <thead className="reporttypeselect-thead">
+              <tr className="reporttypeselect-tr1column">
+                <th className="reporttypeselect-th1column">Head1</th>
+                <th className="reporttypeselect-th1column">Head2</th>
+                <th className="reporttypeselect-th1column">Unit</th>
+                <th className="reporttypeselect-th1column">Attribute</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="reporttypeselect-tbody">
               {getFilteredData().map((item) => (
                 <tr key={item.id}>
                   <td>{item.head1}</td>
@@ -186,38 +187,38 @@ const ReportTypeSelect = () => {
             </tbody>
             <tfoot>
               <tr>
-                <th>Head1</th>
-                <th>Head2</th>
-                <th>Unit</th>
-                <th>Attribute</th>
+                <th className="reporttypeselect-th3column">Head1</th>
+                <th className="reporttypeselect-th3column">Head2</th>
+                <th className="reporttypeselect-th3column">Unit</th>
+                <th className="reporttypeselect-th3column">Attribute</th>
               </tr>
               <tr>
-                <td>
-                  <input
+                <td className="reporttypeselect-tfoot-td">
+                  <input className=" selectreporttype-input-tfoot"
                     type="text"
                     value={newHead1}
                     onChange={(e) => setNewHead1(e.target.value)}
                     required
                   />
                 </td>
-                <td>
-                  <input
+                <td className="reporttypeselect-tfoot-td">
+                  <input className=" selectreporttype-input-tfoot"
                     type="text"
                     value={newHead2}
                     onChange={(e) => setNewHead2(e.target.value)}
                     required
                   />
                 </td>
-                <td>
-                  <input
+                <td className="reporttypeselect-tfoot-td">
+                  <input className=" selectreporttype-input-tfoot"
                     type="text"
                     value={newUnit}
                     onChange={(e) => setNewUnit(e.target.value)}
                     required
                   />
                 </td>
-                <td>
-                  <select
+                <td className="reporttypeselect-tfoot-td">
+                  <select className=" selectreporttype-select-tfoot"
                     type="text"
                     value={newAttributetype}
                     onChange={(e) => setNewAttributetype(e.target.value)}
@@ -233,8 +234,8 @@ const ReportTypeSelect = () => {
               </tr>
             </tfoot>
           </table>
-          <button onClick={handleSubmit}>Add Row</button>
-          <button onClick={handleSubmit2}>Submit</button>
+          <button className=" selectreporttype-addrow" onClick={handleSubmit}>Add Row</button>
+          <button className=" selectreporttype-submit" onClick={handleSubmit2}>Submit</button>
         </div>
       )}
     </div>

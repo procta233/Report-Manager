@@ -72,15 +72,15 @@ const UserCreation = () => {
     console.log(values);
   };
   return (
-    <div>
-      <label>
-        <h1>Create New User</h1>
+    <div className="usercreation-div">
+      <label >
+        <h1 className="usercreation-h1">Creacte New User</h1>
       </label>
-
-      <form onSubmit={hanleSubmit}>
-        <div>
-          <label>User ID</label>
-          <input
+      
+      <form className="usercreation-form" onSubmit={hanleSubmit}>
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">User ID</label>
+          <input className="usercreation-input"
             type="text"
             id="user_id"
             name="user_id"
@@ -89,9 +89,9 @@ const UserCreation = () => {
             required
           />
         </div>
-        <div>
-          <label>Username</label>
-          <input
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">Username</label>
+          <input className="usercreation-input"
             type="text"
             id="user_name"
             name="user_name"
@@ -100,9 +100,10 @@ const UserCreation = () => {
             required
           />
         </div>
-        <div>
-          <label>Employee ID</label>
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">Employee ID</label>
           <input
+          className="usercreation-input"
             type="text"
             id="employ_id"
             name="employ_id"
@@ -111,9 +112,10 @@ const UserCreation = () => {
             required
           />
         </div>
-        <div>
-          <label>Department</label>
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">Department</label>
           <input
+          className="usercreation-input"
             type="text"
             id="department"
             name="department"
@@ -121,24 +123,26 @@ const UserCreation = () => {
             onChange={changeHandler}
           />
         </div>
-        <div>
-          <label>User Type</label>
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">User Type</label>
           <select
+          className="usercreation-select"
             id="designation"
             name="designation"
             onChange={handleSelectChange}
             required
           >
-            <option value="">Select User Type</option>
-            <option value="admin">Admin</option>
-            <option value="approver">Approver</option>
-            <option value="checker">Checker</option>
-            <option value="creator">Creator</option>
+            <option className="usercreation-label-2" value="">Select User Type</option>
+            <option className="usercreation-input" value="admin">Admin</option>
+            <option className="usercreation-input" value="approver">Approver</option>
+            <option className="usercreation-input" value="checker">Checker</option>
+            <option className="usercreation-input" value="creator">Creator</option>
           </select>
         </div>
-        <div>
-          <label>Phone Number*</label>
-          <input
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">Phone Number*</label>
+          <input 
+          className="usercreation-input"
             type="tel"
             id="phone_number"
             name="phone_number"
@@ -147,9 +151,10 @@ const UserCreation = () => {
             required
           />
         </div>
-        <div>
-          <label>Email*</label>
+        <div className="usercreation-div2">
+          <label className="usercreation-label-2">Email*</label>
           <input
+          className="usercreation-input"
             type="email"
             id="email"
             name="email"
@@ -158,7 +163,7 @@ const UserCreation = () => {
             required
           />
         </div>
-        <button type="submit">Enter</button>
+        <button className="usercreation-button" type="submit">Enter</button>
       </form>
     </div>
   );
