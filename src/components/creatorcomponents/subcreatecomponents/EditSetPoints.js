@@ -3,15 +3,15 @@ import "../../CSS/EditSetPoints.css";
 
 function Table() {
   const columns = [
-    { key: 'id', title: 'ID' },
-    { key: 'name', title: 'Name' },
-    { key: 'age', title: 'Age' },
+    { key: 'id', title: 'S1' },
+    { key: 'name', title: 'S2' },
+    { key: 'age', title: 'S3' },
   ];
 
   const data = [
-    { id: 1, name: 'John Doe', age: 32 },
-    { id: 2, name: 'Jane Smith', age: 45 },
-    { id: 3, name: 'Bob Johnson', age: 27 },
+    { id: 1, name: '4', age: 32 },
+    { id: 2, name: '5', age: 45 },
+    { id: 3, name: '6', age: 27 },
   ];
   const [tableData, setTableData] = useState(data);
   const [tableColumns, setTableColumns] = useState(columns);

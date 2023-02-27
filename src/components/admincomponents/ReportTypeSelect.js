@@ -100,7 +100,7 @@ const ReportTypeSelect = () => {
       // replace with your logic to handle registration errors
     }
     console.log(newData);
-    // window.location.reload(false);
+     window.location.reload(false);
   };
   const call = (e) => {
     setSelectedFormType(e);

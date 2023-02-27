@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-
-const data = [
-  { sensorname:'S1',head1: "A", head2: "B", unit: "C", attributrtype: "D", reporttype: "Audit Report" },
-  { sensorname:'S2',head1: "F", head2: "G", unit: "H", attributrtype: "I", reporttype: "Audit Report" },
-  { sensorname:'S3',head1: "K", head2: "L", unit: "M", attributrtype: "N", reporttype: "Audit Report" },
-  { sensorname:'S4',head1: "P", head2: "Q", unit: "R", attributrtype: "S", reporttype: "Audit Report" },
-  { sensorname:'S5',head1: "U", head2: "V", unit: "W", attributrtype: "X", reporttype: "Audit Report" },
-];
+import React, { useState,useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const DateTimeOptionality = () => {
+  const { state } = useLocation();
+
+  const [data, setData] = useState([]);
   const [selected1, setSelected1] = useState([]);
   const [selected2, setSelected2] = useState([]);
-
+  const API9 = "https://create-users.onrender.com/api/sensors/reporttype";
   const toggleSelected1 = (index) => {
     const selectedIndex = selected1.indexOf(index);
     if (selectedIndex >= 0) {
@@ -30,23 +26,58 @@ const DateTimeOptionality = () => {
     }
   };
 
-  const fifthAttribute = data[0].reporttype; // assuming the fifth attribute is the same for all objects
-
   const selectedData1 = selected1.map((i) => data[i]);
   const selectedData2 = selected2.map((i) => data[i]);
-  const newData1 = selectedData1.map(({ sensorname, reporttype }) => ({ sensorname, reporttype }));
-  const newData2 = selectedData2.map(({ sensorname, reporttype }) => ({ sensorname, reporttype }));
-  const last =()=>{
+  const newData1 = selectedData1.map(({ sensorname, reporttype }) => ({
+    sensorname,
+    reporttype,
+  }));
+  const newData2 = selectedData2.map(({ sensorname, reporttype }) => ({
+    sensorname,
+    reporttype,
+  }));
+  const last = () => {
     console.log(newData1);
     console.log(newData2);
-  }
+  };
+  const cancer ={reporttype: state.race};
+  const callData= async(API9) => {
+    console.log(JSON.stringify(cancer));
+    try {
+      const response = await fetch(API9, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cancer)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const res = await response.json();
+      console.log(res);
+      setData(res);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  
+
+  };
+
+  useEffect(() => {
+  
+  callData(API9);
+
+  }, []);
+  
 
   return (
     <div>
-      
       <div>
-      <h1>Select The Types For Setpoints and Columns</h1>
-      <h2>{fifthAttribute}</h2>
+        <h1>Select The Types For Setpoints and Columns</h1>
+        <h2>{state.race}</h2>
       </div>
       <table>
         <thead>
@@ -85,8 +116,7 @@ const DateTimeOptionality = () => {
         </tbody>
       </table>
       <button onClick={last}>Submit</button>
-      </div>
-  )
-          };
-  export default DateTimeOptionality;
-  
+    </div>
+  );
+};
+export default DateTimeOptionality;

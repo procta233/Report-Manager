@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+
+
 import "../CSS/CreateReport.css"
 
 function CreateReport() {
   const [values, setValues] = useState({
 
+    userid:"ABS-896645467",
     clientid: "",
     reporttype: "",
-    system: "",
+    systems: "",
     manufacturer: "",
     datebegin: "",
     timebegin: "",
     dateend: "",
     timeend: "",
+    status:"",
     timetype: "",
   });
   // const [manList, setManList] = useState([]);
@@ -23,19 +29,34 @@ function CreateReport() {
   // const API4 ="https://create-users.onrender.com/api/manufacturers";
   const API6 = "https://create-users.onrender.com/api/systems";
   const API8 = "https://create-users.onrender.com/api/description";
-
+  const race = values.reporttype;
+  const navigate =useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
-
- 
     console.log(values);
+    
+
+    const abc ={
+      "userid": "user5",
+      "clientid": "client2",
+      "reporttype": "Aut",
+      "systems": "system9",
+      "manufacturer": "manufacturer1",
+      "datebegin": "2022-02-23",
+      "timebegin": "10:30:00",
+      "dateend": "2022-02-23",
+      "timeend": "12:30:00",
+      "status": "completed",
+      "timetype": "UTC"
+  }
+
     try {
       const response = await fetch(API8, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: abc,
       });
 
       if (!response.ok) {
@@ -48,9 +69,10 @@ function CreateReport() {
       console.error("There was an error registering the user:", error);
       // replace with your logic to handle registration errors
     };
-   
-    window.location.reload(false);
-  };
+       
+    
+    navigate("datetimeoptionality", { state: { race} }); 
+    };
   const formattedDateBegin = values.datebegin.split("/").reverse().join("-");
   const formattedDateEnd = values.dateend.split("/").reverse().join("-");
   const getUniqueClients = [
@@ -117,7 +139,19 @@ function CreateReport() {
       </label>
       
     <form className="usercreation-form" onSubmit={handleSubmit}>
-
+     <div className="usercreation-div2">
+      <label className="usercreation-label-2" htmlFor="userid">User ID</label>
+      <input
+      className="usercreation-select"
+        type="text"
+        id="userid"
+        name="userid"
+        value={values.userid}
+        onChange={handleChange}
+        placeholder={values.userid}
+        disabled
+      />
+      </div>
       <div className="usercreation-div2">
       <label className="usercreation-label-2" htmlFor="clientid">Client ID</label>
       <select
@@ -155,13 +189,13 @@ function CreateReport() {
       </select>
       </div>
        <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="system">System</label>
+      <label className="usercreation-label-2" htmlFor="systems">systems</label>
       <select
         className="usercreation-select"
         type="text"
-        id="system"
-        name="system"
-        value={values.system}
+        id="systems"
+        name="systems"
+        value={values.systems}
         onChange={handleChange}
       >
         <option value="" disabled selected>
@@ -254,6 +288,8 @@ function CreateReport() {
 
       <button className="usercreation-button" type="submit">Submit</button>
     </form>
+  
+
     </div>
   );
 }
