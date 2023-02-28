@@ -1,13 +1,17 @@
 import React, { useState,useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import "../CSS/DateTimeOptionality.css";
 
 const DateTimeOptionality = () => {
   const { state } = useLocation();
+  const navigate=useNavigate();
 
   const [data, setData] = useState([]);
   const [selected1, setSelected1] = useState([]);
   const [selected2, setSelected2] = useState([]);
   const API9 = "https://create-users.onrender.com/api/sensors/reporttype";
+
+
   const toggleSelected1 = (index) => {
     const selectedIndex = selected1.indexOf(index);
     if (selectedIndex >= 0) {
@@ -37,8 +41,11 @@ const DateTimeOptionality = () => {
     reporttype,
   }));
   const last = () => {
+    navigate('finalformcreate');
     console.log(newData1);
     console.log(newData2);
+
+     
   };
   const cancer ={reporttype: state.race};
   const callData= async(API9) => {
@@ -74,37 +81,37 @@ const DateTimeOptionality = () => {
   
 
   return (
-    <div>
-      <div>
-        <h1>Select The Types For Setpoints and Columns</h1>
-        <h2>{state.race}</h2>
+    <div className="datetimeoptionality-container">
+      <div className="datetimeoptionality-heading">
+        <h1 className="datetimeoptionality-h1">Select The Columns For Setpoints Table and Columns Table</h1>
+        <h2 className="datetimeoptionality-h1">{state.race} Report</h2>
       </div>
-      <table>
-        <thead>
+      <table className="datetimeoptionality-table">
+        <thead className="datetimeoptionality-thead">
           <tr>
-            <th>Head1</th>
-            <th>Head2</th>
-            <th>Unit</th>
-            <th>Attribute</th>
-            <th>SetPoints</th>
-            <th>Columns</th>
+            <th className="datetimeoptionality-th">Head1</th>
+            <th className="datetimeoptionality-th">Head2</th>
+            <th className="datetimeoptionality-th">Unit</th>
+            <th className="datetimeoptionality-th">Attribute</th>
+            <th className="datetimeoptionality-th">Columns for SetPoints Table</th>
+            <th className="datetimeoptionality-th">Columns for Final Report Table</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="datetimeoptionality-tbody">
           {data.map((item, index) => (
             <tr key={index}>
-              <td>{item.head1}</td>
-              <td>{item.head2}</td>
-              <td>{item.unit}</td>
-              <td>{item.attributrtype}</td>
-              <td>
-                <input
+              <td className="datetimeoptionality-td">{item.head1}</td>
+              <td className="datetimeoptionality-td">{item.head2}</td>
+              <td className="datetimeoptionality-td">{item.unit}</td>
+              <td className="datetimeoptionality-td">{item.attributrtype}</td>
+              <td className="datetimeoptionality-td">
+                <input 
                   type="checkbox"
                   checked={selected1.indexOf(index) >= 0}
                   onChange={() => toggleSelected1(index)}
                 />
               </td>
-              <td>
+              <td className="datetimeoptionality-td">
                 <input
                   type="checkbox"
                   checked={selected2.indexOf(index) >= 0}
@@ -115,7 +122,7 @@ const DateTimeOptionality = () => {
           ))}
         </tbody>
       </table>
-      <button onClick={last}>Submit</button>
+      <button className="datetimeoptionality-button" onClick={last}>Submit</button>
     </div>
   );
 };

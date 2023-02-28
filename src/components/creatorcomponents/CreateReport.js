@@ -36,19 +36,7 @@ function CreateReport() {
     console.log(values);
     
 
-    const abc ={
-      "userid": "user5",
-      "clientid": "client2",
-      "reporttype": "Aut",
-      "systems": "system9",
-      "manufacturer": "manufacturer1",
-      "datebegin": "2022-02-23",
-      "timebegin": "10:30:00",
-      "dateend": "2022-02-23",
-      "timeend": "12:30:00",
-      "status": "completed",
-      "timetype": "UTC"
-  }
+    console.log(JSON.stringify(values))
 
     try {
       const response = await fetch(API8, {
@@ -56,7 +44,8 @@ function CreateReport() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: abc,
+       
+        body: JSON.stringify(values),
       });
 
       if (!response.ok) {
@@ -133,16 +122,16 @@ function CreateReport() {
   }, []);
 
   return (
-    <div className="usercreation-div">
+    <div className="createreport-div">
     <label>
-        <h1 className="usercreation-h1">Create New Report</h1>
+        <h1 className="createreport-h1">Create New Report</h1>
       </label>
       
-    <form className="usercreation-form" onSubmit={handleSubmit}>
-     <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="userid">User ID</label>
+    <form className="createreport-form" onSubmit={handleSubmit}>
+     <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="userid">User ID</label>
       <input
-      className="usercreation-select"
+      className="createreport-select"
         type="text"
         id="userid"
         name="userid"
@@ -152,10 +141,10 @@ function CreateReport() {
         disabled
       />
       </div>
-      <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="clientid">Client ID</label>
+      <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="clientid">Client ID</label>
       <select
-      className="usercreation-select"
+      className="createreport-select"
         type="text"
         id="clientid"
         name="clientid"
@@ -170,10 +159,10 @@ function CreateReport() {
         ))}
       </select>
       </div>
-      <div className="usercreation-div2">
-      <label  className="usercreation-label-2" htmlFor="reporttype">Report Type</label>
+      <div className="createreport-div2">
+      <label  className="createreport-label-2" htmlFor="reporttype">Report Type</label>
       <select
-      className="usercreation-select"
+      className="createreport-select"
         type="text"
         id="reporttype"
         name="reporttype"
@@ -188,10 +177,10 @@ function CreateReport() {
         ))}
       </select>
       </div>
-       <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="systems">systems</label>
+       <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="systems">systems</label>
       <select
-        className="usercreation-select"
+        className="createreport-select"
         type="text"
         id="systems"
         name="systems"
@@ -206,10 +195,10 @@ function CreateReport() {
         ))}
       </select>
       </div>   
-        <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="manufacturer">Manufacturer</label>
+        <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="manufacturer">Manufacturer</label>
       <select
-        className="usercreation-select"
+        className="createreport-select"
         type="text"
         id="manufacturer"
         name="manufacturer"
@@ -224,10 +213,10 @@ function CreateReport() {
         ))}
       </select>
       </div>
-       <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="datebegin">Date Begin</label>
+       <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="datebegin">Date Begin</label>
       <input
-      className="usercreation-input"
+      className="createreport-input"
         type="date"
         id="datebegin"
         name="datebegin"
@@ -235,10 +224,10 @@ function CreateReport() {
         onChange={handleChange}
       />
       </div>
-          <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="timebegin">Time Begin</label>
+          <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="timebegin">Time Begin</label>
       <input
-      className="usercreation-input"
+      className="createreport-input"
         type="time"
         id="timebegin"
         name="timebegin"
@@ -246,10 +235,10 @@ function CreateReport() {
         onChange={handleChange}
       />
       </div>
-      <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="dateend">Date End</label>
+      <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="dateend">Date End</label>
       <input
-        className="usercreation-input"
+        className="createreport-input"
         type="date"
         id="dateend"
         name="dateend"
@@ -257,10 +246,10 @@ function CreateReport() {
         onChange={handleChange}
       />
       </div>
-      <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="timeend">Time End</label>
+      <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="timeend">Time End</label>
       <input
-        className="usercreation-input"
+        className="createreport-input"
         type="time"
         id="timeend"
         name="timeend"
@@ -268,10 +257,10 @@ function CreateReport() {
         onChange={handleChange}
       />
       </div>
-      <div className="usercreation-div2">
-      <label className="usercreation-label-2" htmlFor="timetype">Time Type</label>
+      <div className="createreport-div2">
+      <label className="createreport-label-2" htmlFor="timetype">Time Type</label>
       <select
-      className="usercreation-select"
+      className="createreport-select"
         type="text"
         id="timetype"
         name="timetype"
@@ -286,7 +275,7 @@ function CreateReport() {
       </select>
       </div>
 
-      <button className="usercreation-button" type="submit">Submit</button>
+      <button className="createreport-button" type="submit">Submit</button>
     </form>
   
 

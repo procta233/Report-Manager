@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   height: 160vh;
-  background-color: #f3f1f1;
+  background-color:  #f1f1f3;
 
   
 }
@@ -31,7 +31,8 @@
 
 .usercreation-h1 {
   display: flex;
-  
+  background-color: #eaeeea;
+
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -62,22 +63,6 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
-/* 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-}
-
-
-body {
-  background-color: #f1f1f1;
-}
-
- */
-
 
  .usercreation-div2 {
   display: flex;
@@ -124,7 +109,7 @@ body {
 
 }
 
-.usercreation-input:focus{
+/* .usercreation-input:focus{
   outline: none;
   border-bottom: 1px solid #007bff;
 }
@@ -133,7 +118,7 @@ body {
 .usercreation-select:focus{
   outline: none;
   border-bottom: 1px solid #007bff;
-}
+} */
 
 
 .usercreation-button {
@@ -142,15 +127,16 @@ body {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #007bff;
- 
+  background-color: #4CAF50;
+  color: #ecedec;
+ margin-right: 50px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .usercreation-button:hover {
-  background-color: #3937cb;
+color: #2c4df2;
 }
 .usercreation-button::before {
   background-color: #555;
@@ -176,96 +162,3 @@ body {
 
 
 
-
-/* 
-
-.icon {
-  font-size: 24px;
-  color: #444;
-  margin-right: 10px;
-}
-
-.user-id-icon {
-  content: "\e7fd";
-  font-family: "Material Icons";
-} */
-
-
-/* .form-group {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-
-.fa {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-.my-class:before {
-  content: "\f007";
-}  */
-
-
-/* input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-select:focus {
-  outline: none;
-  border-bottom: 1px solid #007bff;
-} */
-
-
-/* 
-.error {
-  color: #dc3545;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
-.success {
-  color: #28a745;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
-
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.icon-container svg {
-  height: 2rem;
-  width: 2rem;
-  margin-right: 0.5rem;
-  fill: #007bff;
-}
-
-@media only screen and (max-width: 600px) {
-  form h1 {
-    font-size: 1.5rem;
-  }
-
-  form button {
-    padding: 0.5rem 0.75rem;
-  }
-
-  .icon-container svg {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-}
- */

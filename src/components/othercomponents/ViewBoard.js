@@ -82,7 +82,7 @@ function ViewBoard() {
             <td>{report.timeend}</td>
             <td>{report.status}</td>
             <td>
-              <button onClick={() => handleEdit(index)}>Edit</button>
+              
               <button onClick={() => handleDelete(index)}>Delete</button>
             </td>
           </tr>

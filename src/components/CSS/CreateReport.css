@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-.usercreation-div {
+.createreport-div {
  
   width: 100%;
   margin-bottom: 0rem;
@@ -12,13 +12,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 180vh;
+  height: 190vh;
   background-color: #f3f1f1;
 
   
 }
 
-.usercreation-label {
+.createreport-div2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+
+  
+}
+
+.createreport-label {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -29,7 +40,7 @@
 }
 
 
-.usercreation-h1 {
+.createreport-h1 {
   display: flex;
   
   align-items: center;
@@ -41,13 +52,13 @@
   text-align: center;
 }
 
-.usercreation-h1::before {
+.createreport-h1::before {
   content: "\f007";
   font-family: "Font Awesome 5 Free";
   margin-right: 10px;
 }
 
-.usercreation-form {
+.createreport-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +74,6 @@
   margin-bottom: 10px;
 }
 
-/* 
 * {
   box-sizing: border-box;
   margin: 0;
@@ -79,20 +89,20 @@ body {
  */
 
 
- .usercreation-div2 {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
 
- .usercreation-label-2 {
-  font-size: 16px;
+ .createreport-label-2 {
+
   font-weight: 500;
-  color: #333;
-  margin-bottom: 8px;
+  display: inline-block;
+
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  /* display: block; */
+  color: #080808;
+  margin-right: 5px;
 }
-.usercreation-input {
+.createreport-input {
   border: none;
   border-radius: 5px;
   padding: 0.75rem;
@@ -104,9 +114,11 @@ body {
   border-bottom: 1px solid #ccc;
   width: 70%;
   margin-bottom: 2rem;
+  display: inline-block; /* display input field as inline-block */
+  vertical-align: top; 
 }
 
-.usercreation-select {
+.createreport-select {
   border: none;
   border-radius: 5px;
   padding: 0.75rem;
@@ -124,35 +136,35 @@ body {
 
 }
 
-.usercreation-input:focus{
+.createreport-input:focus{
   outline: none;
   border-bottom: 1px solid #007bff;
 }
 
 
-.usercreation-select:focus{
+.createreport-select:focus{
   outline: none;
   border-bottom: 1px solid #007bff;
 }
 
 
-.usercreation-button {
+.createreport-button {
   border: none;
   border-radius: 5px;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #007bff;
- 
+  background-color: #4CAF50;
+  color: #FFFFFF; 
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.usercreation-button:hover {
-  background-color: #3937cb;
+.createreport-button:hover {
+  background-color: #6894db;
 }
-.usercreation-button::before {
+.createreport-button::before {
   background-color: #555;
   font-family: "Font Awesome 5 Free";
   margin-right: 10px;
@@ -162,11 +174,11 @@ body {
 
 
 @media screen and (max-width: 768px) {
-  .usercreation-h1 {
+  .createreport-h1 {
     font-size: 28px;
   }
 
-  .usercreation-form {
+  .createreport-form {
     max-width: 400px;
   }
 }

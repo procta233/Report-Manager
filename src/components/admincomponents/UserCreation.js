@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import "../CSS/UserCreation.css"
+import "../CSS/UserCreation.css";
+import { Link, Outlet } from 'react-router-dom';
+
 
 const UserCreation = () => {
   const [values, setValues] = useState({
@@ -74,7 +76,7 @@ const UserCreation = () => {
   return (
     <div className="usercreation-div">
       <label >
-        <h1 className="usercreation-h1">Creacte New User</h1>
+        <h1 className="usercreation-h1">Create New User</h1>
       </label>
       
       <form className="usercreation-form" onSubmit={hanleSubmit}>
@@ -163,7 +165,11 @@ const UserCreation = () => {
             required
           />
         </div>
+        <div>
+        <button className="usercreation-button" type="submit"><Link to="/admin">Back</Link></button>
+
         <button className="usercreation-button" type="submit">Enter</button>
+        </div>
       </form>
     </div>
   );

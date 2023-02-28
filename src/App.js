@@ -10,7 +10,8 @@ import MapModule from './components/admincomponents/MapModule'
 import ReportTypeSelect from "./components/admincomponents/ReportTypeSelect";
 import CreateReport from "./components/creatorcomponents/CreateReport";
 import DateTimeOptionality from "./components/creatorcomponents/DateTimeOptionality";
-import FinalFormCreate from "./components/creatorcomponents/FinalFormCreate"
+import FinalFormCreate from "./components/creatorcomponents/FinalFormCreate";
+
 
 const App = () => {
   return (

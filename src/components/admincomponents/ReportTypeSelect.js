@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/ReportTypeSelect.css";
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus } from "react-icons/fa";
 
 const ReportTypeSelect = () => {
   const [data, setData] = useState([]);
@@ -100,7 +100,7 @@ const ReportTypeSelect = () => {
       // replace with your logic to handle registration errors
     }
     console.log(newData);
-     window.location.reload(false);
+    window.location.reload(false);
   };
   const call = (e) => {
     setSelectedFormType(e);
@@ -121,7 +121,8 @@ const ReportTypeSelect = () => {
   return (
     <div className="reporttypeselect-div">
       {select2 && (
-        <div className="reporttypeselect-div">
+        <div >
+          <label className="selectreporttype-label">Select Report Type</label>
           <table className="reporttypeselect-table">
             <thead className="reporttypeselect-thead">
               <tr className="reporttypeselect-tr1column">
@@ -131,7 +132,12 @@ const ReportTypeSelect = () => {
             </thead>
             <tbody className="reporttypeselect-tbody">
               {getUniqueFormTypes.map((cur, index) => (
-                <tr className="reporttypeselect-tr2-tbody"key={index} value={cur} onClick={() => call(cur)}>
+                <tr
+                  className="reporttypeselect-tr2-tbody"
+                  key={index}
+                  value={cur}
+                  onClick={() => call(cur)}
+                >
                   <td className="reporttypeselect-tbody-td">{index + 1}</td>
                   <td className="reporttypeselect-tbody-td">{cur}</td>
                 </tr>
@@ -147,13 +153,19 @@ const ReportTypeSelect = () => {
                 </button>
               </tr>
               {select3 && (
-                <div className="reporttypeselect-div">
-                  <input  className=" selectreporttype-input-tfoot"
+                <div>
+                  <input
+                    className=" selectreporttype-input-tfoot"
                     type="text"
                     onChange={(e) => addReport(e.target.value)}
                     required
                   />
-                  <button className= "reportselecttype-submit-button "onClick={() => call2()}>Submit</button>
+                  <button
+                    className="reportselecttype-submit-button "
+                    onClick={() => call2()}
+                  >
+                    Submit
+                  </button>
                 </div>
               )}
             </tbody>
@@ -161,9 +173,9 @@ const ReportTypeSelect = () => {
         </div>
       )}
       {select && (
-        <div className="reporttypeselect-div">  
-   {/* popup */}
-          <div className="reporttypeselect-div">
+        <div>
+          {/* popup */}
+          <div>
             <h2 className="selectreporttype-h2">{selectedFormType} Report</h2>
           </div>
           <table className="reportselecttype-table">
@@ -172,7 +184,7 @@ const ReportTypeSelect = () => {
                 <th className="reporttypeselect-th1column">Head1</th>
                 <th className="reporttypeselect-th1column">Head2</th>
                 <th className="reporttypeselect-th1column">Unit</th>
-                <th className="reporttypeselect-th1column">Attribute</th>
+                <th className="reporttypeselect-th1column">Select Attribute</th>
               </tr>
             </thead>
             <tbody className="reporttypeselect-tbody">
@@ -190,11 +202,12 @@ const ReportTypeSelect = () => {
                 <th className="reporttypeselect-th3column">Head1</th>
                 <th className="reporttypeselect-th3column">Head2</th>
                 <th className="reporttypeselect-th3column">Unit</th>
-                <th className="reporttypeselect-th3column">Attribute</th>
+                <th className="reporttypeselect-th3column">Select Attribute</th>
               </tr>
               <tr>
                 <td className="reporttypeselect-tfoot-td">
-                  <input className=" selectreporttype-input-tfoot"
+                  <input
+                    className=" selectreporttype-input-tfoot"
                     type="text"
                     value={newHead1}
                     onChange={(e) => setNewHead1(e.target.value)}
@@ -202,7 +215,8 @@ const ReportTypeSelect = () => {
                   />
                 </td>
                 <td className="reporttypeselect-tfoot-td">
-                  <input className=" selectreporttype-input-tfoot"
+                  <input
+                    className=" selectreporttype-input-tfoot"
                     type="text"
                     value={newHead2}
                     onChange={(e) => setNewHead2(e.target.value)}
@@ -210,7 +224,8 @@ const ReportTypeSelect = () => {
                   />
                 </td>
                 <td className="reporttypeselect-tfoot-td">
-                  <input className=" selectreporttype-input-tfoot"
+                  <input
+                    className=" selectreporttype-input-tfoot"
                     type="text"
                     value={newUnit}
                     onChange={(e) => setNewUnit(e.target.value)}
@@ -218,7 +233,8 @@ const ReportTypeSelect = () => {
                   />
                 </td>
                 <td className="reporttypeselect-tfoot-td">
-                  <select className=" selectreporttype-select-tfoot"
+                  <select
+                    className=" selectreporttype-select-tfoot"
                     type="text"
                     value={newAttributetype}
                     onChange={(e) => setNewAttributetype(e.target.value)}
@@ -234,8 +250,12 @@ const ReportTypeSelect = () => {
               </tr>
             </tfoot>
           </table>
-          <button className=" selectreporttype-addrow" onClick={handleSubmit}>Add Row</button>
-          <button className=" selectreporttype-submit" onClick={handleSubmit2}>Submit</button>
+          <button className=" selectreporttype-addrow" onClick={handleSubmit}>
+            Add Row
+          </button>
+          <button className=" selectreporttype-submit" onClick={handleSubmit2}>
+            Submit
+          </button>
         </div>
       )}
     </div>
