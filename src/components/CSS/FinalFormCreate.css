@@ -17,7 +17,7 @@
 }
 
 .finalformcreate-table {
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
   width: 100%;
 }
 
@@ -32,6 +32,7 @@
 .finalformcreate-table th {
   background-color: #f2f2f2;
   font-weight: bold;
+  block-size: 120%;
 }
 
 .finalformcreate-table tr:nth-child(even) {
@@ -55,7 +56,7 @@
 .finalformcreate-table button {
   padding: 4px;
   margin: 1px;
-  font-size: 10px;
+  font-size: 8px;
   background-color: #4CAF50;
   color: white;
   border: none;

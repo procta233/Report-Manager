@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import "../CSS/DateTimeOptionality.css";
 
 const DateTimeOptionality = () => {
@@ -47,17 +47,12 @@ const DateTimeOptionality = () => {
 
      
   };
+  
   const cancer ={reporttype: state.race};
   const callData= async(API9) => {
     console.log(JSON.stringify(cancer));
     try {
-      const response = await fetch(API9, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(cancer)
-      });
+      const response = await fetch(API9)
   
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -103,7 +98,7 @@ const DateTimeOptionality = () => {
               <td className="datetimeoptionality-td">{item.head1}</td>
               <td className="datetimeoptionality-td">{item.head2}</td>
               <td className="datetimeoptionality-td">{item.unit}</td>
-              <td className="datetimeoptionality-td">{item.attributrtype}</td>
+              <td className="datetimeoptionality-td">{item.attributetype}</td>
               <td className="datetimeoptionality-td">
                 <input 
                   type="checkbox"
