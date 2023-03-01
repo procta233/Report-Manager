@@ -161,14 +161,7 @@ const Table2 = () => {
 
     console.log(body);
 
-    //   var temp=[[]];
-    //   for(var i =0;i<body.length;i++){
-    //     console.log(i,body[i],typeof(body[i]));
-    //     const myArray = Object.values(body[i]);
-    //      temp[i] =myArray;
-    //   }
-    //   console.log("temp",temp)
-    //  console.log('BODY',body);
+  
   };
 
   const handlePrintClick = () => {

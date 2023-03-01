@@ -17,13 +17,14 @@ function CreateReport() {
     timebegin: "",
     dateend: "",
     timeend: "",
-    status:"",
+    status:"DRAFT",
     timetype: "",
   });
   // const [manList, setManList] = useState([]);
   const [clientList, setClientList] = useState([]);
   const [systemList, setSystemList] = useState([]);
   const [repList, setRepList] = useState([]);
+  const [repid,setRepid]=useState('');
   const API7 = "https://create-users.onrender.com/api/sensorlist";
   const API5 = "https://create-users.onrender.com/api/clients";
   // const API4 ="https://create-users.onrender.com/api/manufacturers";
@@ -40,27 +41,37 @@ function CreateReport() {
 
     try {
       const response = await fetch(API8, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-       
-        body: JSON.stringify(values),
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          
+            body: JSON.stringify(values),
       });
+      const responseData = await response.json();
+      console.log(responseData.reportid);
+     setRepid(responseData.reportid);
+      console.log(repid);
 
+   
       if (!response.ok) {
         throw new Error("Network response was not ok");
-      }
+      };
 
       console.log("User registration successful");
+
       // replace with your logic to handle successful registration
-    } catch (error) {
+     
+     } catch (error) {
       console.error("There was an error registering the user:", error);
       // replace with your logic to handle registration errors
     };
-       
     
-    navigate("datetimeoptionality", { state: { race} }); 
+       const clie=values.clientid;
+       console.log(race,clie,repid);
+       const rep = repid;
+    
+    navigate("datetimeoptionality", { state: { race, rep, clie } }); 
     };
   const formattedDateBegin = values.datebegin.split("/").reverse().join("-");
   const formattedDateEnd = values.dateend.split("/").reverse().join("-");
