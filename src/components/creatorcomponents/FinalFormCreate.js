@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useRef } from "react";
 import html2pdf from "html2pdf.js";
 
 import "../CSS/FinalFormCreate.css";
@@ -8,6 +7,7 @@ const Table2 = () => {
   const API10 = "https://create-users.onrender.com/api/pwd_auto/search";
   const API11 = "https://create-users.onrender.com/api/sensors/reporttype";
   const API12 = "https://create-users.onrender.com/api/pwd_auto/search";
+  const API17 ="https://create-users.onrender.com/api/advancesearch";
   const [isSelected, setIsselected] = useState(true);
   const [data, setData] = useState([[]]);
   const [body, setBody] = useState([]);
@@ -234,11 +234,77 @@ const Table2 = () => {
     newWin.print();
     newWin.close();
   };
+  const getAll= async(API17) => {
+ 
+    try {
+      const response = await fetch(API17,{
+        method: "POST",
+        mode:'no-cors',
+        headers: {
+          "Content-Type": "application/json",
+        },
+       
+        body: {
+
+          reportid:"2023-01-0610:26:11.00000009:43123ABCABS-896645467000004V_1",
+          table:"pwd_auto"
+      }
+      })
+      const res = await response.text();
+      console.log(res);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      // console.log(res);
+
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  
+
+  };
+  const tablename="pwd_auto";
+
+  // const getAll5=async(API17)=>{
+  //   const reportid="2023-01-0610:26:11.00000009:43123ABCABS-896645467000004V_1"
+  //   fetch( API17+`?reportid=${reportid}&table=${tablename}`)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log(data);
+  //   })
+  //   .catch(error => {
+  //     console.error(error);
+  //   });
+  // };
+
+
+  // const API17 = "https://create-users.onrender.com/api/advancesearch";
+const getAll5 = async (API17) => {
+  const tablename = "pwd_auto";
+  const reportid = "2023-01-0610:26:11.00000009:43123ABCABS-896645467000004V_1";
+  const url = new URL(API17);
+  url.searchParams.set("reportid", reportid);
+  url.searchParams.set("table", tablename);
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+
+
 
   useEffect(() => {
-    getat(API10);
-    getpar(API11);
-    getbody(API12);
+    // getat(API10);
+    // getpar(API11);
+    // getbody(API12);
+    // getAll(API17);
+    getAll5(API17);
   }, []);
   return (
     <div className="finalformcreate-container">

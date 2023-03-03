@@ -13,9 +13,9 @@ function CreateReport() {
     reporttype: "",
     systems: "",
     manufacturer: "",
-    datebegin: "",
+    datebegin: "2023-01-06 10:26:11.000000",
     timebegin: "",
-    dateend: "",
+    dateend: "2023-01-06 10:57:11.000000",
     timeend: "",
     status:"DRAFT",
     timetype: "",
@@ -71,8 +71,12 @@ function CreateReport() {
        console.log(race,clie,repid);
        const rep = repid;
     
-    navigate("datetimeoptionality", { state: { race, rep, clie } }); 
+    if (repid !== '')
+    
+   { navigate("datetimeoptionality", { state: { race, rep, clie } }); };
     };
+    
+
   const formattedDateBegin = values.datebegin.split("/").reverse().join("-");
   const formattedDateEnd = values.dateend.split("/").reverse().join("-");
   const getUniqueClients = [
@@ -233,7 +237,7 @@ function CreateReport() {
         name="datebegin"
         value={values.datebegin}
         onChange={handleChange}
-      />
+      disabled/>
       </div>
           <div className="createreport-div2">
       <label className="createreport-label-2" htmlFor="timebegin">Time Begin</label>
@@ -255,7 +259,7 @@ function CreateReport() {
         name="dateend"
         value={values.dateend}
         onChange={handleChange}
-      />
+      disabled/>
       </div>
       <div className="createreport-div2">
       <label className="createreport-label-2" htmlFor="timeend">Time End</label>
@@ -285,8 +289,10 @@ function CreateReport() {
         <option value="2">Date And Time Joined</option>
       </select>
       </div>
+      
 
-      <button className="createreport-button" type="submit">Submit</button>
+      <button className="createreport-button" type="submit">Save</button>
+      
     </form>
   
 

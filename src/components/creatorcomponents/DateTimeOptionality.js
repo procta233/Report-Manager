@@ -79,7 +79,7 @@ const DateTimeOptionality = () => {
     } catch (error) {
       console.error('Error:', error);
     };
-     // navigate('finalformcreate');
+     navigate('finalformcreate');
   };
   
   const cancer ={reporttype: state.race};
